@@ -64,6 +64,7 @@ void main()
 	//output
 	system("pause");
 	system("cls");
+	puts("");
 	puts("\t---------------------------------------------------");
 	puts("\t|             +==OVERALL CGPA==+                  |");
 	puts("\t---------------------------------------------------");
@@ -83,17 +84,17 @@ void main()
 	puts("");
 	if (overallCGPA ==4.0)
 		puts("\tGrade category     : A+ =)");
-	else if (overallCGPA >=3.75 && overallCGPA <4)
+	else if (overallCGPA >=3.75 )
 		puts("\tGrade category     : A");
-	else if (overallCGPA >=3.5 && overallCGPA <3.75)
+	else if (overallCGPA >=3.5)
 		puts("\tGrade category     : A-");
-	else if (overallCGPA >=3.25 && overallCGPA <3.5)
+	else if (overallCGPA >=3.25)
 		puts("\tGrade category     : B+");
-	else if (overallCGPA >=3.0 && overallCGPA <3.25)
+	else if (overallCGPA >=3.0)
 		puts("\tGrade category     : B");
-	else if (overallCGPA >=2.5 && overallCGPA < 3.0)
+	else if (overallCGPA >=2.5)
 		puts("\tGrade category     : C+");
-	else if (overallCGPA >= 2.0 && overallCGPA < 2.5)
+	else if (overallCGPA >= 2.0)
 		puts("\tGrade category     : C");
 	else
 		puts("\tGrade category     : F !!! =(");
