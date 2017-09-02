@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable :4996)
+
+//CONSTANTS
+#define TOTAL_SUBJECTS 6
+
+//function declarations
+void header();
+
+
+void main()
+{
+	//Variable declarations
+	int creditHrs[TOTAL_SUBJECTS],sumCreditHrs=0;
+	float cgpaGrade[TOTAL_SUBJECTS], gradePoints[TOTAL_SUBJECTS],
+		  totalGradePoints = 0, overallCGPA;
+
+	header();
+	system("pause");
+	system("cls");
+	//user input
+	puts("+----+");
+	puts("|CGPA|");
+	puts("+----+");
+
+		for (int i = 0; i < TOTAL_SUBJECTS; i++)
+		{
+			do
+			{
+				printf("CGPA for subject [%d/%d] :", i + 1, TOTAL_SUBJECTS);
+				scanf("%f", &cgpaGrade[i]);
+				rewind(stdin);
+				if (cgpaGrade[i] > 4.0 )
+					puts("Invalid grade ! Please re-enter");
+			} while (cgpaGrade[i] > 4); //loop will repeat as long as the input is greater than 4
+		}
+
+	puts("\n");
+	puts("+------------+");
+	puts("|CREDIT HOURS|");
+	puts("+------------+");
+	for (int i = 0; i < TOTAL_SUBJECTS; i++)
+	{
+		printf("Amount of credit hours for subject [%d/%d] :", i + 1, TOTAL_SUBJECTS);
+		scanf("%d", &creditHrs[i]);
+	}
+
+	//calculations
+	for (int i = 0; i < TOTAL_SUBJECTS; i++)
+	{
+		gradePoints[i] =cgpaGrade[i]* creditHrs[i] ;
+		sumCreditHrs += creditHrs[i];
+	}
+	for (int i = 0; i < TOTAL_SUBJECTS; i++)
+	{
+		totalGradePoints += gradePoints[i];
+	}
+	for (int i = 0; i < TOTAL_SUBJECTS; i++)
+	{
+		overallCGPA = totalGradePoints / sumCreditHrs;
+	}
+
+	//output
+	system("pause");
+	system("cls");
+	puts("\t---------------------------------------------------");
+	puts("\t|             +==OVERALL CGPA==+                  |");
+	puts("\t---------------------------------------------------");
+	puts("\t+_________________________________________________+");
+	puts("\t|Subject     CGPA     Credit Hours     GradePoints|");
+	puts("\t|=======     ====     ===========      ===========|");
+	for (int i = 0; i < TOTAL_SUBJECTS; i++)
+	{
+		printf("\t|%4d     %7.2f     %6d     %14.2f   |", i+1,cgpaGrade[i],creditHrs[i],gradePoints[i]);
+		puts("");
+	}
+	puts("\t|_________________________________________________|");
+	printf("\tTotal Credit Hours = %d", sumCreditHrs);
+	puts("");
+	printf("\tOverall CGPA       = %.2lf", overallCGPA);
+
+
+
+	puts("\n");
+	system("pause");
+}
+void header()
+{
+	puts("\n");
+	puts("\t*********************************");
+	puts("\t*           C-G-P-A             *");
+	puts("\t*      C-A-L-C-U-L-A-T-O-R      *");
+	puts("\t*********************************");
+	puts("\t*  ----    ----    ----    ---- *");
+	puts("\t*  |1 |    |2 |    |3 |    |4 | *");
+	puts("\t*  ----    ----    ----    ---- *");
+	puts("\t*  ----    ----    ----    ---- *");
+	puts("\t*  |5 |    |6 |    |7 |    |8 | *");
+	puts("\t*  ----    ----    ----    ---- *");
+	puts("\t*  ----    ----    ----    ---- *");
+	puts("\t*  |9 |    |0 |    |+ |    |- | *");
+	puts("\t*  ----    ----    ----    ---- *");
+	puts("\t*********************************");
+	puts("\n");
+}
