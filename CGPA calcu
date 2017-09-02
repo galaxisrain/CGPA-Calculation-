@@ -79,8 +79,24 @@ void main()
 	printf("\tTotal Credit Hours = %d", sumCreditHrs);
 	puts("");
 	printf("\tOverall CGPA       = %.2lf", overallCGPA);
-
-
+	//conditions
+	puts("");
+	if (overallCGPA ==4.0)
+		puts("\tGrade category     : A+ =)");
+	else if (overallCGPA >=3.75 && overallCGPA <4)
+		puts("\tGrade category     : A");
+	else if (overallCGPA >=3.5 && overallCGPA <3.75)
+		puts("\tGrade category     : A-");
+	else if (overallCGPA >=3.25 && overallCGPA <3.5)
+		puts("\tGrade category     : B+");
+	else if (overallCGPA >=3.0 && overallCGPA <3.25)
+		puts("\tGrade category     : B");
+	else if (overallCGPA >=2.5 && overallCGPA < 3.0)
+		puts("\tGrade category     : C+");
+	else if (overallCGPA >= 2.0 && overallCGPA < 2.5)
+		puts("\tGrade category     : C");
+	else
+		puts("\tGrade category     : F !!! =(");
 
 	puts("\n");
 	system("pause");
